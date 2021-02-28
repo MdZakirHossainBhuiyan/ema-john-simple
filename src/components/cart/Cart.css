@@ -1,0 +1,32 @@
+.displayCart{
+    text-align: center;
+}
+
+.displayCart h4{
+    font-size: 25px;
+}
+
+.displayCart p{
+    font-size: 18px;
+}
+
+.displayCart th{
+    text-align: left;
+    font-weight: 400;
+    padding-right: 10px;
+}
+
+.displayCart button{
+    background-color: #f0c14b;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.totalPrice{
+    font-size: 20px;
+    color: red;
+    font-weight: 700;
+}

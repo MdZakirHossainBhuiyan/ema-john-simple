@@ -3,7 +3,7 @@ import './Cart.css';
 
 const Cart = (props) => {
     const cart = props.cart;
-    const totalPrice = cart.reduce((total, pr) => (total + pr.price), 0);
+    const totalPrice = cart.reduce((total, pr) => (total + pr.price*pr.quantity), 0);
 
     let shippingCost = 0;
     if(totalPrice>100){
@@ -17,12 +17,6 @@ const Cart = (props) => {
     }
 
     let tax = (totalPrice/10);
-
-    // let total = 0;
-    // for (let i = 0; i < cart.length; i++) {
-    //     const product = cart[i];
-    //     total = total + product.price;
-    // }
 
     return (
         <div className="displayCart">
@@ -46,12 +40,14 @@ const Cart = (props) => {
                     <td>${totalPrice.toFixed(2)}</td>
                 </tr>
                 <tr className="totalPrice">
-                    <th>Order Total: </th>
+                    <th className="text-primary">Order Total: </th>
                     <td>${(totalPrice + shippingCost + tax).toFixed(2)}</td>
                 </tr>
             </table>
             <br/>
-            <button>Review your order</button>
+            {
+                props.children
+            }
         </div>
     );
 };
